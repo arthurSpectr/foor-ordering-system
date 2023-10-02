@@ -58,14 +58,16 @@ public class OrderDataMapper {
                 .build();
     }
 
-    private List<OrderItem> orderItemsToOrderItemEntities(List<com.food.ordering.system.order.service.domain.dto.create.OrderItem> items) {
-        return items.stream().map(item ->
-                OrderItem.Builder.builder()
-                        .product(new Product(new ProductId(item.getProductId())))
-                        .price(new Money(item.getPrice()))
-                        .quantity(item.getQuantity())
-                        .subTotal(new Money(item.getSubTotal()))
-                        .build()).collect(Collectors.toList());
+    private List<OrderItem> orderItemsToOrderItemEntities(
+            List<com.food.ordering.system.order.service.domain.dto.create.OrderItem> orderItems) {
+        return orderItems.stream()
+                .map(orderItem ->
+                        OrderItem.Builder.builder()
+                                .product(new Product(new ProductId(orderItem.getProductId())))
+                                .price(new Money(orderItem.getPrice()))
+                                .quantity(orderItem.getQuantity())
+                                .subTotal(new Money(orderItem.getSubTotal()))
+                                .build()).collect(Collectors.toList());
     }
 
     private StreetAddress orderAddressToStreetAddress(OrderAddress address) {

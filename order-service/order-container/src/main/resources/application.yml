@@ -23,7 +23,7 @@ spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/food-order?currentSchema=order&binaryTransfer=true&reWriteBatchedInserts=true&stringtype=unspecified
     username: postgres
-    password: admin
+    password: SuperParol12345
     driver-class-name: org.postgresql.Driver
   sql:
     init:
