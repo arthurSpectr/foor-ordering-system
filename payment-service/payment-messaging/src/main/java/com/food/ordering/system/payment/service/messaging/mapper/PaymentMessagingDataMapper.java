@@ -19,7 +19,7 @@ public class PaymentMessagingDataMapper {
     paymentCompletedEventToPaymentResponseAvroModel(PaymentCompletedEvent paymentCompletedEvent) {
         return PaymentResponseAvroModel.newBuilder()
                 .setId(UUID.randomUUID())
-                .setSagaId(UUID.fromString(""))
+                .setSagaId(UUID.randomUUID())
                 .setPaymentId(paymentCompletedEvent.getPayment().getId().getValue())
                 .setCustomerId(paymentCompletedEvent.getPayment().getCustomerId().getValue())
                 .setOrderId(paymentCompletedEvent.getPayment().getOrderId().getValue())
