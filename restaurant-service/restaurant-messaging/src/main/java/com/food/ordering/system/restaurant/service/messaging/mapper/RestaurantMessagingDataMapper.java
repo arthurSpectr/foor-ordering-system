@@ -35,7 +35,7 @@ public class RestaurantMessagingDataMapper {
     orderRejectedEventToRestaurantApprovalResponseAvroModel(OrderRejectedEvent orderRejectedEvent) {
         return RestaurantApprovalResponseAvroModel.newBuilder()
                 .setId(UUID.randomUUID())
-                .setSagaId(UUID.fromString(""))
+                .setSagaId(UUID.randomUUID())
                 .setOrderId(orderRejectedEvent.getOrderApproval().getOrderId().getValue())
                 .setRestaurantId(orderRejectedEvent.getRestaurantId().getValue())
                 .setCreatedAt(orderRejectedEvent.getCreatedAt().toInstant())
