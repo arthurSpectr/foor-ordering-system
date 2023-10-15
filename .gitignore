@@ -39,4 +39,5 @@ build/
 
 ### Other ###
 *.xml
+!pom.xml
 infrastructure/docker-compose/volumes/*
