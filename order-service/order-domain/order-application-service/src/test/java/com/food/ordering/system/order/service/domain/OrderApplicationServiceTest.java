@@ -77,7 +77,7 @@ public class OrderApplicationServiceTest {
     @BeforeAll
     public void init() {
         createOrderCommand = CreateOrderCommand.builder()
-                .customerID(CUSTOMER_ID)
+                .customerId(CUSTOMER_ID)
                 .restaurantId(RESTAURANT_ID)
                 .address(OrderAddress.builder()
                         .street("street_1")
@@ -100,7 +100,7 @@ public class OrderApplicationServiceTest {
                 .build();
 
         createOrderCommandWrongPrice = CreateOrderCommand.builder()
-                .customerID(CUSTOMER_ID)
+                .customerId(CUSTOMER_ID)
                 .restaurantId(RESTAURANT_ID)
                 .address(OrderAddress.builder()
                         .street("street_1")
@@ -123,7 +123,7 @@ public class OrderApplicationServiceTest {
                 .build();
 
         createOrderCommandWrongProductPrice = CreateOrderCommand.builder()
-                .customerID(CUSTOMER_ID)
+                .customerId(CUSTOMER_ID)
                 .restaurantId(RESTAURANT_ID)
                 .address(OrderAddress.builder()
                         .street("street_1")

@@ -14,7 +14,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class CreateOrderCommand {
     @NotNull
-    private final UUID customerID;
+    private final UUID customerId;
     @NotNull
     private final UUID restaurantId;
     @NotNull
