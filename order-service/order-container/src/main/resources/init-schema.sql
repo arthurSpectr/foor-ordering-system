@@ -87,8 +87,7 @@ CREATE INDEX "payment_outbox_saga_status"
     ON "order".payment_outbox
         (type, outbox_status, saga_status);
 
--- Commented only to check concurrent access in test
--- CREATE UNIQUE INDEX "payment_outbox_saga_id"
+--CREATE UNIQUE INDEX "payment_outbox_saga_id"
 --    ON "order".payment_outbox
 --    (type, saga_id, saga_status);
 
@@ -113,8 +112,17 @@ CREATE INDEX "restaurant_approval_outbox_saga_status"
     ON "order".restaurant_approval_outbox
         (type, outbox_status, saga_status);
 
--- Commented only to check concurrent access in test
--- CREATE UNIQUE INDEX "restaurant_approval_outbox_saga_id"
+--CREATE UNIQUE INDEX "restaurant_approval_outbox_saga_id"
 --    ON "order".restaurant_approval_outbox
 --    (type, saga_id, saga_status);
 
+DROP TABLE IF EXISTS "order".customers CASCADE;
+
+CREATE TABLE "order".customers
+(
+    id uuid NOT NULL,
+    username character varying COLLATE pg_catalog."default" NOT NULL,
+    first_name character varying COLLATE pg_catalog."default" NOT NULL,
+    last_name character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT customers_pkey PRIMARY KEY (id)
+);
